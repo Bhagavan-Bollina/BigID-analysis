@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1f2937 30%, #3f4c6b 100%);
+            color: #fff;
+        }
+        .futuristic-button {
+            background: #0ea5e9;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease;
+        }
+        .futuristic-button:hover {
+            background: #0284c7;
+        }
+        .input-file {
+            padding: 8px;
+            background-color: #111827;
+            border: 2px solid #4b5563;
+            border-radius: 8px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="bg-gray-900 p-10 rounded-lg shadow-lg max-w-lg w-full text-center">
+        <h1 class="text-4xl font-bold mb-6 text-blue-400">Upload CSV/Excel File</h1>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <!-- File input with accept attribute and client-side validation -->
+            <input type="file" name="file" accept=".csv,.xlsx" required class="input-file block mx-auto mb-6 focus:ring focus:ring-blue-500">
+            <button type="submit" class="futuristic-button">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Email</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1f2937 30%, #3f4c6b 100%);
+            color: #fff;
+        }
+        .futuristic-button {
+            background: #0ea5e9;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease;
+        }
+        .futuristic-button:hover {
+            background: #0284c7;
+        }
+        .input-email {
+            padding: 8px;
+            background-color: #111827;
+            border: 2px solid #4b5563;
+            border-radius: 8px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="bg-gray-900 p-10 rounded-lg shadow-lg max-w-lg w-full text-center">
+        <h1 class="text-4xl font-bold mb-6 text-blue-400">Search for Owner Email</h1>
+        <form action="/search" method="POST">
+            <!-- Pass hidden fields to retain file info -->
+            <input type="hidden" name="filename" value="{{ filename }}">
+            <input type="hidden" name="extension" value="{{ extension }}">
+            
+            <!-- Email input with client-side validation -->
+            <label for="email" class="block text-xl mb-2">Enter Owner Email:</label>
+            <input type="email" name="email" required placeholder="owner@example.com"
+                   class="input-email block mx-auto mb-6 focus:ring focus:ring-blue-500">
+            
+            <button type="submit" class="futuristic-button">Search</button>
+        </form>
+    </div>
+</body>
+</html>
+

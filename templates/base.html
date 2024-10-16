@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic SaaS Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1f2937; /* Dark background */
+            color: #ffffff; /* Light text */
+        }
+        .nav-item:hover {
+            background-color: #111827;
+        }
+        .nav-item {
+            cursor: pointer;
+        }
+        .card {
+            background-color: #1e3a8a;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .futuristic-button {
+            background-color: #0ea5e9;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease;
+        }
+        .futuristic-button:hover {
+            background-color: #0284c7;
+        }
+        input:focus {
+            outline: none;
+            border-color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Top Navigation Bar -->
+    <nav class="bg-gray-900 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between">
+            <h1 class="text-3xl font-bold text-blue-400">BigID Analysis</h1>
+            <ul class="flex space-x-4">
+                <li class="nav-item text-white px-3 py-2 rounded-md text-md">Home</li>
+                <li class="nav-item text-white px-3 py-2 rounded-md text-md">Upload</li>
+                <li class="nav-item text-white px-3 py-2 rounded-md text-md">Search</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="container mx-auto mt-8 flex flex-col space-y-8 px-4">
+        <!-- Content to be injected by child templates -->
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 p-4 mt-auto text-center text-gray-400">
+        © 2024 Futuristic BigID Analysis
+    </footer>
+</body>
+</html>
+
