@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_file
 import pandas as pd
 import os
+from urllib.parse import quote as url_quote  # Updated to use urllib's quote instead of werkzeug
 
 app = Flask(__name__)
 
@@ -57,7 +58,7 @@ def search_email():
             return render_template('error.html', message="No records found for the entered email."), 404
         
         # Save the filtered data to a new Excel file
-        output_filename = f"filtered_data_{email}.xlsx"
+        output_filename = f"filtered_data_{url_quote(email)}.xlsx"  # Use url_quote for safe file naming
         output_path = os.path.join(app.config['UPLOAD_FOLDER'], output_filename)
         filtered_df.to_excel(output_path, index=False)
         

@@ -1,4 +1,5 @@
 Flask==2.1.2
 pandas==1.3.5
 openpyxl==3.0.9
+Werkzeug==2.0.3  # Add this line to pin Werkzeug to version 2.0.3
 
